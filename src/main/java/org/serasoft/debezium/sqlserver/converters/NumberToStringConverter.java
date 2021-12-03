@@ -53,14 +53,12 @@ public class NumberToStringConverter implements CustomConverter<SchemaBuilder, R
 
     if (!Strings.isNullOrEmpty(language)) {
       Locale selectedLocale = new Locale(language);
-      if (!locale.equals(selectedLocale)) {
         LOGGER.info(
             "User required to change locale. Changing locale from "
                 + locale
                 + " to "
                 + selectedLocale);
         locale = selectedLocale;
-      }
     }
     if (!Strings.isNullOrEmpty(includeGrouping) && includeGrouping.equals("true")) {
       formatString += ",";
